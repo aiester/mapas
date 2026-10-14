@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7f6">
+  <title>Provincias de España | Explora el mapa</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="codigo.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">GEOGRAFÍA · ESPAÑA</p>
+        <h1>Un país, <span>52 territorios.</span></h1>
+        <p class="intro">Explora el mapa y descubre la capital y la población de cada provincia.</p>
+      </div>
+      <div class="header-badge" aria-label="52 provincias y ciudades autónomas">
+        <span class="badge-number">52</span>
+        <span class="badge-label">provincias<br>y ciudades autónomas</span>
+      </div>
+    </header>
+
+    <section class="explorer" aria-label="Mapa interactivo de España">
+      <div class="map-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Mapa provincial</h2>
+            <p>Selecciona una provincia para ver sus datos</p>
+          </div>
+          <span class="map-hint"><span class="hint-dot"></span> Mapa interactivo</span>
+        </div>
+        <div id="map-status" class="map-status" role="status">Cargando mapa…</div>
+        <div class="map-scroll">
+          <svg id="spain-map" class="spain-map" viewBox="0 0 1000 820" role="group" aria-label="Mapa de las provincias de España">
+            <g id="mainland-provinces"></g>
+            <g id="canary-provinces"></g>
+            <text class="canary-label" x="42" y="731">ISLAS CANARIAS</text>
+          </svg>
+        </div>
+        <div class="map-legend"><span class="legend-swatch"></span> Haz clic o pulsa Intro sobre una provincia</div>
+      </div>
+
+      <aside class="info-panel" aria-live="polite" aria-atomic="true">
+        <div class="info-topline"><span class="info-icon" aria-hidden="true">↗</span><span>FICHA PROVINCIAL</span></div>
+        <div id="empty-state" class="empty-state">
+          <div class="empty-illustration" aria-hidden="true">
+            <span class="illustration-dot dot-one"></span>
+            <span class="illustration-dot dot-two"></span>
+            <span class="illustration-dot dot-three"></span>
+            <span class="illustration-line"></span>
+          </div>
+          <h2>Tu próximo destino</h2>
+          <p>Elige una provincia en el mapa para consultar su capital y cuántas personas viven allí.</p>
+        </div>
+        <div id="province-details" class="province-details" hidden>
+          <p class="detail-kicker">PROVINCIA</p>
+          <h2 id="province-name"></h2>
+          <div class="detail-divider"></div>
+          <div class="detail-item">
+            <span class="detail-label">Capital</span>
+            <strong id="province-capital"></strong>
+          </div>
+          <div class="detail-item population-item">
+            <span class="detail-label">Habitantes en la capital</span>
+            <strong id="province-population"></strong>
+            <span class="population-note">Población municipal aproximada · 2024</span>
+          </div>
+          <p class="selection-tip">Pulsa otra provincia para comparar sus datos.</p>
+        </div>
+        <div class="panel-footer">
+          <span class="footer-mark" aria-hidden="true">●</span>
+          <span>Datos de población municipal aproximados, redondeados.</span>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="page-footer">
+      <span>España · 50 provincias y 2 ciudades autónomas</span>
+      <span>La población indicada corresponde al municipio de la capital.</span>
+    </footer>
+  </main>
+</body>
+</html>
